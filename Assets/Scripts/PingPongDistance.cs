@@ -6,6 +6,7 @@ public class PingPongDistance : MonoBehaviour {
     public Vector3 moveDir = Vector3.zero;
     public float speed = 0.0f;
     public float travelDistance = 0.0f;
+    
     private Transform thisTransform = null;
 
 	// Use this for initialization
