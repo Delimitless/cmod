@@ -2579,6 +2579,7 @@ GameObject:
   - 114: {fileID: 1906715587}
   - 114: {fileID: 1906715590}
   - 65: {fileID: 1906715591}
+  - 114: {fileID: 1906715592}
   m_Layer: 0
   m_Name: cashPowerup
   m_TagString: Untagged
@@ -2661,6 +2662,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.08999991, y: .975000024, z: .200000003}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1906715592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1906715586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b50fd4b2100b58b40937d046d76ddce5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cashAmount: 100
+  clip: {fileID: 0}
 --- !u!1001 &1909682947
 Prefab:
   m_ObjectHideFlags: 0
