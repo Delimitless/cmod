@@ -58,4 +58,12 @@ public class NotificationsManager : MonoBehaviour {
 
         listeners = tmpListeners;
     }
+
+    public void ClearListeners() {
+        listeners.Clear();
+    }
+
+    public void OnLevelWasLoaded() {
+        RemoveRedundancies();
+    }
 }
