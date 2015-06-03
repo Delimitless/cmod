@@ -9,13 +9,13 @@ public class PowerupDollar : MonoBehaviour {
     private AudioSource sfx = null;
 
     void Start() {
-        GameObject soundsObject = GameObject.FindGameObjectWithTag("sounds");
-
-        if (soundsObject == null) {
-            return;
-        }
-
-        sfx = soundsObject.GetComponent<AudioSource>();
+//        GameObject soundsObject = GameObject.FindGameObjectWithTag("sounds");
+//
+//        if (soundsObject == null) {
+//            return;
+//        }
+//
+//        sfx = soundsObject.GetComponent<AudioSource>();
     }
 
     void OnTriggerEnter(Collider other) {

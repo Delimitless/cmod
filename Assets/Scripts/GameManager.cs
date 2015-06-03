@@ -2,19 +2,41 @@
 using System.Collections;
 
 [RequireComponent (typeof (NotificationsManager))]
-public class GameManager : Singleton<GameManager> {
+public class GameManager : MonoBehaviour {
 
-    protected GameManager() { }
-
-    private static NotificationsManager notifications = null;
-
-    public static NotificationsManager Notifications {
+    public static GameManager Instance {
         get {
-            if (notifications == null) {
-                notifications = GameManager.Instance.GetComponent<NotificationsManager>();
+            if (instance == null) {
+                instance = new GameObject("GameManager").AddComponent<GameManager>();
+            }
+
+            return instance;
+        }
+    }
+
+    public static NotificationsManager Notifications
+    {
+        get
+        {
+            if (notifications == null)
+            {
+                notifications = instance.GetComponent<NotificationsManager>();
             }
 
             return notifications;
+        }
+    }
+
+    private static GameManager instance = null;
+    private static NotificationsManager notifications = null;
+
+    void Awake() {
+        if (instance && (instance.GetInstanceID() != GetInstanceID())) {
+            DestroyImmediate(gameObject);
+        }
+        else {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
         }
     }
 }
