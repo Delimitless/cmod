@@ -34,5 +34,7 @@ public class PowerupDollar : MonoBehaviour {
 //        if (pc) {
 //            pc.Cash += cashAmount;
 //        }
+
+        GameManager.Notifications.PostNotification(this, "PowerupCollected");
     }
 }

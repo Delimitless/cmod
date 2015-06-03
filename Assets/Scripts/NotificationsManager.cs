@@ -29,14 +29,14 @@ public class NotificationsManager : MonoBehaviour {
         }
     }
 
-    public void PostNotification(string notificationName) {
+    public void PostNotification(Component sender, string notificationName) {
 
         if (!listeners.ContainsKey(notificationName)) {
             return;
         }
 
         foreach (Component listener in listeners[notificationName]) {
-            listener.SendMessage(notificationName, SendMessageOptions.DontRequireReceiver);
+            listener.SendMessage(notificationName, sender, SendMessageOptions.DontRequireReceiver);
         }
     }
 
